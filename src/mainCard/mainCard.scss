@@ -1,0 +1,43 @@
+.paper{
+    background-color: #D9DFE9  !important;
+    padding: 15px;
+    height: fit-content;
+}
+.redButton{
+    border: 1px solid red;
+    border-radius: 3px;
+    background: transparent;
+    padding: 5px;
+    cursor: pointer;
+}
+.addItemButton{
+    background: transparent;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+}
+.addItemInput{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid cyan;
+    width: 80%;
+    font-size: 16px;
+    font-weight: 500;
+    
+}
+.addItemInput:focus,.addItemInput:active {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid cyan;
+    width: 80%;
+    font-size: 16px;
+    font-weight: 500;
+    
+}
+.addItem{
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: space-between;
+    margin-top: 30px;
+}
