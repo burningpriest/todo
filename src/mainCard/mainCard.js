@@ -28,9 +28,27 @@ export function MainCard({ title, deleteCard }) {
             setName('');
         }
     }
+    const dragEnter = (e) =>{
+        e.preventDefault();
+        console.log('dragEnter.......')
+        const id = e.dataTransfer.getData('text/plain');
+    }
+    const dragOver = (e) =>{
+        e.preventDefault();
+    }
+    const drop = (e) =>{
+        console.log('dragdrop.......')
+        // const value = e.dataTransfer.getData('text/plain');
+        const value = e.target.innerText;
+        if(!items.find(item=>item==value)){
+            let temp = [...items, value];
+            setItems(temp);
+        }
+
+    }
     
 	return (
-		<Paper sx={{ minWidth: 275, margin: 2 }} className='paper'>
+		<Paper sx={{ minWidth: 275, margin: 2 }} className='paper' onDragEnter={dragEnter} onDragEnd={drop} onDragOver={dragOver}>
 			<Typography
 				sx={{ fontSize: 25, fontWeight: "bold" }}
 				gutterBottom

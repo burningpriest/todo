@@ -10,11 +10,15 @@ export function Item({ name, removeItem }) {
     const handleRemove = ()=> {
         removeItem(name)
     }
-    const handleDrag = (e) => {
-        e.dataTransfer.setData('text', name);
-    }
+	const dragStart = (e) =>{
+		console.log('dragStart.....	',e)
+		e.dataTransfer.setData('text/plain', e.target.innerText)
+		// setTimeout(()=>{
+		// 	removeItem(e.target.innerText);
+		// })
+	}
 	return (
-		<Card className="card" onDrag={handleDrag}>
+		<Card className="card" onDragStart={dragStart} draggable="true" id="item">
 			<CardActions className='cardActions'>
 				<Typography sx={{ fontSize: 18, fontWeight: "bold" }}>
 					{name}
